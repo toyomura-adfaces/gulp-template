@@ -1,0 +1,49 @@
+// variableとmixinの読み込み asで任意の変数に格納する必要あり
+// @use "../Global/variable" as val(この部分は自由に命名してOK);
+// @use "../Global/mixin" as mix(この部分は自由に命名してOK);
+
+//asで変換したものを変数名や関数名の前に記述する必要がある(.で繋げる)
+//　呼びだす際は @inclue val.$変数名;
+//　呼びだす際は @inclue mix.関数名;
+
+html {
+    font-weight: 500;
+    font-size: 62.5%;
+}
+
+a{
+    transition: 0.2s;
+}
+
+
+a,span{
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+iframe{
+    max-width: 100%;
+}
+
+select {
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
+}
+
+input,
+select,
+textarea {
+    background-color: #fff;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}

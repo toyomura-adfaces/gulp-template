@@ -1,0 +1,23 @@
+/*----------------------------------------------------------------------------------------
+none.scss
+----------------------------------------------------------------------------------------*/
+@media (min-width:769px) {
+    .u-tab-appea{
+        display: none;
+    }
+}
+@media (max-width:768px) {
+    .u-tab-none{
+        display: none;
+    }
+}
+@media (min-width:481px) {
+    .u-sp-appea{
+        display: none;
+    }
+}
+@media (max-width:480px) {
+    .u-sp-none{
+        display: none;
+    }
+}

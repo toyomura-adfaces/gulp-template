@@ -1,0 +1,7 @@
+@mixin Serif() {
+    font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "Ms P明朝", "MS PMincho", serif;
+}
+
+@mixin SansSerif() {
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sanss", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}

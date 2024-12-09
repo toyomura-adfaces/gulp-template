@@ -1,0 +1,32 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.3",
+    "css-mqpacker": "^7.0.0",
+    "del": "^6.1.1",
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 5"
+  ]
+}
