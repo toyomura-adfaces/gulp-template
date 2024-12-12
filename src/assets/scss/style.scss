@@ -2,11 +2,12 @@
 @use "Foundation/base";
 
 @use "Global/mixin";
-@use "Global/variable";
+@use "Global/var";
+@use "Global/extend";
+@use "Global/function";
 
 @use "Layout/header";
 @use "Layout/footer";
-@use "Layout/container";
 
 @use "Object/Project/project";
 

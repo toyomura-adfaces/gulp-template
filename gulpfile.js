@@ -19,13 +19,13 @@ const pngquant = require('imagemin-pngquant');
 const srcPath = {
 	'scss': './src/assets/scss/**/*.scss',
 	'html': './src/**/*.html',		//  末尾にカンマを追加
-	'js': './src/assets/**/*.js',			// ← 末尾にカンマを追加
+	'js': './src/assets/js/**/*.js',			// ← 末尾にカンマを追加
 	'img': './src/assets/img/**/*'
 };
 const distPath = {
 	'css': './dist/assets/css/',
 	'html': './dist/',				//  末尾にカンマを追加
-	'js': './dist/assets/',					// ← 末尾にカンマを追加
+	'js': './dist/assets/js/',					// ← 末尾にカンマを追加
 	'img': './dist/assets/img/'
 };
 // Scssコンパイル用のタスク
@@ -77,6 +77,10 @@ const clean = () => {
 	return del('./dist/**/*');		//  distフォルダ内のファイルをすべて削除
 }
 // JSファイル圧縮用のタスク
+const js = () => {
+	return gulp.src(srcPath.js)
+		.pipe(gulp.dest(distPath.js))
+}
 const jsMin = () => {
 	return gulp.src(srcPath.js)	//  圧縮したいJavaScriptファイルを指定
 		.pipe(gulp.dest(distPath.js)) // 圧縮前のファイルを出力		
@@ -111,13 +115,14 @@ const minifyImage = () => {
 const watchFiles = () => {
 	gulp.watch(srcPath.scss, gulp.series(cssSass))
 	gulp.watch(srcPath.html, gulp.series(html, browserSyncReload))
+	gulp.watch(srcPath.js, gulp.series(js, browserSyncReload))
 	gulp.watch(srcPath.img, gulp.series(minifyImage, browserSyncReload))
 }
 // 開発段階 全タスク実行文
 exports.default = gulp.series(
 	clean,
-	gulp.parallel(html, cssSass, minifyImage),
-	gulp.parallel(watchFiles, browserSyncFunc, cssMin, jsMin)
+	gulp.parallel(html, cssSass, js, minifyImage),
+	gulp.parallel(watchFiles, browserSyncFunc)
 );
 
 // 提出段階 全タスク実行文
